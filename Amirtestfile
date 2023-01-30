@@ -1,0 +1,9 @@
+Importing necessary libraries. pandas library for manipulating and analyzing data, yfinance for capturing historical data, matplotlib for visualisation
+
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+start='2020-01-01'
+end='2023-01-27'
+symbol=['BTC-USD', 'ETH-USD', 'XRP-USD', 'XMR-USD', 'MANA-USD', 'BNB-USD']
+df=yf.download(symbol, start, end)
