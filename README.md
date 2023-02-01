@@ -10,3 +10,7 @@ At the first step, we need to capture our data from different sources. There are
 My chosen token and coins (Pair with USDT) for comparison are: BTC, ETH, XMR, MANA, BNB, XRP
 My selection approach is based on the categories existed in cryptocurrency area. Also, I want to test this hypothesis that correlation of tokens with BTC decreases over time depending on their categories.
 
+
+
+
+.
