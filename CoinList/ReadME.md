@@ -1,4 +1,4 @@
-#CoinList
+# CoinList
 
 This file contains the list of coins/tokens chosen by different measures. it has three columns:
 First: The category of coin/token
