@@ -1,0 +1,28 @@
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+start="2019-01-01"
+end="2023-02-14"
+symbol="BTC-USD"
+dt=yf.download(symbol, start, end)
+dt
+
+plt.style.use("seaborn")
+dt.to_csv("Bitcoin.csv")
+pd.options.display.float_format='{:.4f}'.format
+pd.read_csv("Bitcoin.csv", header=[0], index_col=0, parse_dates=[0])
+import numpy as np
+
+dt.info()
+data=dt[["Close", "Volume"]].copy()
+
+#Financial Data Analysis/Visual Inspection
+
+data.Close.plot(figsize=(12, 10), title="BTC/USD", fontsize=12)
+plt.show()
+
+data.Close.loc["2019-06"].plot(figsize=(12, 8), title="BTC/USD", fontsize=12)   #Price chart for one month
+plt.show()
+
+data.Volume.plot(figsize=(12, 8), title="BTC/USD", fontsize=12)
+plt.show()
