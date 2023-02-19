@@ -26,3 +26,54 @@ plt.show()
 
 data.Volume.plot(figsize=(12, 8), title="BTC/USD", fontsize=12)
 plt.show()
+
+data.Volume.loc["2019-06"].plot(figsize=(12, 8), title="BTC/USD", fontsize=12)  #Volume chart for one month
+plt.show()
+
+data["returns"]=np.log(data.Close.div(data.Close.shift(1)))
+data
+
+data.returns.plot(kind="hist", bins=100, figsize=(12, 8))
+plt.show()
+
+data.returns.nlargest(10)
+
+data.returns.nsmallest(10)
+
+#A simple Buy and Hold "Strategy"
+#Assumption: Invest 1 USD in BTC on 2018-12-31 and hold until 2023-02-14
+
+data.Close/data.Close[0]
+data.returns.sum()
+
+multiple=np.exp(data.returns.sum())
+multiple
+
+data["creturns"]=data.returns.cumsum().apply(np.exp)  #Normalized Prices with Base Value 1
+
+data.creturns.plot(figsize=(12, 8), title="BTC/USD - Buy and Hold", fontsize=12)
+plt.show()
+
+#Performance Measurement
+#Mean return and risk
+
+mu=data.returns.mean()
+mu
+
+std=data.returns.std()   #risk
+std 
+
+#Annualzed mean return and risk
+
+number_of_periods=365.25
+ann_mean=mu*365.5
+ann_mean
+
+ann_std=std*np.sqrt(number_of_periods)
+ann_std
+
+#CAGR
+
+cagr=np.exp(ann_mean)-1
+cagr
+
