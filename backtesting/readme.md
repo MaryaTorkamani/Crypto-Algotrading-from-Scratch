@@ -14,3 +14,10 @@ To fulfill this requirements, we have two choices of libraries in python:
 	faster than Backtesting.py in both implementation and backtest process, but lacks easy setup and/ 
 	visualization/
 	https://vectorbt.dev/#what-is-vectorbt/
+
+_____________________________________________________________________
+
+For the first evaluation, Backtesting.py library was used to emulate the backtesting results of the sma conseq candles on 1d timeframe
+
+To see the list of trades: trade_list.csv
+To see an interactive plot of the backtest: SmaConsec.html
